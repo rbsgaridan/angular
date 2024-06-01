@@ -1,0 +1,39 @@
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  transition: transform 0.1s ease;
+  will-change: transform;
+}
+
+.panning {
+  cursor: grabbing !important;
+}
+
+.not-panning {
+  cursor: default !important;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+ */
+}
+
+.selectable {
+  user-select: text;
+  -webkit-user-select: text; /* Safari */
+  -moz-user-select: text;    /* Firefox */
+  -ms-user-select: text;     /* IE10+ */
+}
+
+/* Override PrimeNG Organization Chart line thickness */
+::ng-deep .p-organizationchart .p-organizationchart-lines:after,
+.p-organizationchart .p-organizationchart-lines:before,
+.p-organizationchart .p-organizationchart-line {
+  border-width: 20px; /* Set to your desired thickness */
+}
+

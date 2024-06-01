@@ -1,1 +1,40 @@
-<p>org-units works!</p>
+<div class="card flex justify-content-center">
+  <div
+    (wheel)="onScroll($event)"
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp($event)"
+    [class.panning]="isPanning"
+    [class.not-panning]="!isPanning"
+    [class.no-select]="isPanning"
+    class="scroll-container">
+    <p-scrollPanel [style]="{ width: '100%', height: '800px' }">
+      <div class="content" [ngStyle]="{
+        'transform': 'scale(' + zoomLevel + ') translate3d(' + panX + 'px, ' + panY + 'px, 0)'
+      }">
+
+        <p-organizationChart [value]="data">
+            <ng-template let-node pTemplate="default">
+                <div class="node-content p-2 text-center" pDroppable (onDrop)="drop($event, node)">
+                    <div pDraggable (onDragStart)="dragStart(node)" (onDragEnd)="dragEnd()">
+                      <h4>Drag me</h4>
+                    </div>
+                    <i class="fa fa-home"></i>
+                    <div >
+                        {{ node.data.name }}
+                    </div>
+                    <div class="p-2">
+                        {{ node.label }}
+                    </div>
+                    <div  >
+                      Drop Here
+                    </div>
+                </div>
+            </ng-template>
+        </p-organizationChart>
+      </div>
+
+    </p-scrollPanel>
+  </div>
+
+</div>
