@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StrategicPlansRoutingModule } from './strategic-plans-routing.module';
 import { StrategicPlansComponent } from './strategic-plans.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { StrategicPlansComponent } from './strategic-plans.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     StrategicPlansRoutingModule
   ]
 })
