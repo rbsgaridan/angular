@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'planning', loadChildren: () => import('./planning/planning.module').then(m => m.PlanningModule) },
   { path: 'performance', loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule) },
+  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
 
 
 ];
