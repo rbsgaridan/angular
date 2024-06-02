@@ -1,4 +1,4 @@
-<div class="card flex justify-content-center">
+<!-- <div class="card flex justify-content-center">
   <div
     (wheel)="onScroll($event)"
     (mousedown)="onMouseDown($event)"
@@ -13,7 +13,7 @@
         'transform': 'scale(' + zoomLevel + ') translate3d(' + panX + 'px, ' + panY + 'px, 0)'
       }">
 
-        <p-organizationChart [value]="data">
+        <p-organizationChart [value]="treeData">
             <ng-template let-node pTemplate="default">
                 <div class="node-content p-2 text-center" pDroppable (onDrop)="drop($event, node)">
                     <div pDraggable (onDragStart)="dragStart(node)" (onDragEnd)="dragEnd()">
@@ -26,9 +26,6 @@
                     <div class="p-2">
                         {{ node.label }}
                     </div>
-                    <div  >
-                      Drop Here
-                    </div>
                 </div>
             </ng-template>
         </p-organizationChart>
@@ -37,4 +34,30 @@
     </p-scrollPanel>
   </div>
 
+</div> -->
+<div class="flex justify-content-center">
+  <div class="row">
+    <div class="col-12">
+      <div class="card flex justify-content-center tree-container" >
+        <p-tree #tree [(value)]="treeData" class="w-full md:w-30rem"
+          [draggableNodes]="true" [droppableNodes]="true" draggableScope="self" droppableScope="self"
+          [contextMenu]="cm" (onNodeDrop)="drop($event)"
+        >
+            <ng-template let-node pTemplate="url">
+                <a [href]="node.data" target="_blank">{{ node.label }}</a>
+            </ng-template>
+            <ng-template let-node pTemplate="default" >
+              <span (click)="onClick($event, node)"><b>{{node.data.code}}</b></span> |
+              <span>{{ node.label }}</span>
+            </ng-template>
+        </p-tree>
+      </div>
+    </div>
+  </div>
 </div>
+
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+
+
+
+

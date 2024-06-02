@@ -7,7 +7,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { DragDropModule } from 'primeng/dragdrop';
-
+import { TreeModule } from 'primeng/tree';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DividerModule } from 'primeng/divider';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,11 @@ import { DragDropModule } from 'primeng/dragdrop';
     OrgUnitsRoutingModule,
     OrganizationChartModule,
     ScrollPanelModule,
-    DragDropModule
-
+    DragDropModule,
+    TreeModule,
+    ContextMenuModule,
+    DividerModule,
+    ButtonModule
   ]
 })
 export class OrgUnitsModule { }

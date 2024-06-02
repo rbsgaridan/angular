@@ -20,6 +20,7 @@ export interface OrgUnitDto extends FullAuditedEntityDto<number> {
   nameOfHead?: string;
   location?: string;
   parentUnitId?: number;
+  children: OrgUnitDto[];
 }
 
 export interface OrgUnitGetListInput extends PagedAndSortedResultRequestDto {

@@ -31,9 +31,82 @@
 }
 
 /* Override PrimeNG Organization Chart line thickness */
-::ng-deep .p-organizationchart .p-organizationchart-lines:after,
-.p-organizationchart .p-organizationchart-lines:before,
-.p-organizationchart .p-organizationchart-line {
-  border-width: 20px; /* Set to your desired thickness */
+// :host ::ng-deep .p-organizationchart .p-organizationchart-lines:after,
+// .p-organizationchart .p-organizationchart-lines:before,
+// .p-organizationchart .p-organizationchart-line {
+//   border-width: 20px; /* Set to your desired thickness */
+// }
+::ng-deep .p-organizationchart .p-organizationchart-line-top
+ {
+  border-top: 3px solid #000000;
+  border-color: rgb(0, 0, 0);
 }
 
+::ng-deep .p-organizationchart .p-organizationchart-line-left {
+  border-right: 3px solid #000000;
+  border-color: #000000;
+}
+
+::ng-deep .p-organizationchart .p-organizationchart-line-down {
+  border-right: 3px solid #000000;
+  border-color: #000000;
+}
+
+
+::ng-deep .p-scrollpanel-content {
+  background-color: #bbbbbb;
+}
+
+// .tree-container {
+//   // height: 500px; /* Or any fixed height you prefer, e.g., 500px */
+//   overflow: auto; /* Enable scrolling */
+//   position: relative;
+//   padding: 20px;
+// }
+
+/* Ensure the tree component takes full height of the container */
+// .tree-container .p-tree {
+//   height: 100%;
+// }
+
+// ::ng-deep .p-tree .p-treenode {
+//   position: relative;
+//   padding-left: 20px; /* Adjust as necessary to position lines correctly */
+// }
+
+// ::ng-deep .p-tree .p-treenode:before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   width: 1px;
+//   background: #ccc; /* Line color */
+// }
+
+// ::ng-deep .p-tree .p-treenode .p-treenode-content:before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: -20px; /* Same as padding-left in .p-treenode */
+//   width: 20px; /* Adjust to match padding-left */
+//   height: 1px;
+//   background: #ccc; /* Line color */
+// }
+
+// ::ng-deep .p-tree .p-treenode .p-treenode-children .p-treenode:before {
+//   top: 50%; /* Center the vertical line */
+// }
+
+// ::ng-deep .p-tree .p-treenode .p-treenode-children .p-treenode-content:before {
+//   top: 50%; /* Center the horizontal line */
+//   transform: translateY(-50%);
+// }
+
+// ::ng-deep .p-tree .p-treenode-leaf .p-treenode-content:before {
+//   content: none; /* Remove lines for leaf nodes */
+// }
+
+// ::ng-deep .p-tree .p-treenode-leaf:before {
+//   content: none; /* Remove lines for leaf nodes */
+// }

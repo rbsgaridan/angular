@@ -5911,6 +5911,21 @@
             }
           ],
           "actions": {
+            "GetFullOrgTree": {
+              "uniqueName": "GetFullOrgTree",
+              "name": "GetFullOrgTree",
+              "httpMethod": "GET",
+              "url": "api/app/org-unit/full-org-tree",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto",
+                "typeSimple": "YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "YamangTao.OrgUnits.OrgUnits.OrgUnitAppService"
+            },
             "CreateAsyncByInput": {
               "uniqueName": "CreateAsyncByInput",
               "name": "CreateAsync",
@@ -18574,8 +18589,8 @@
         }
       ]
     },
-    "YamangTao.OrgUnits.OrgUnits.Dtos.CreateUpdateOrgUnitDto": {
-      "baseType": null,
+    "YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto": {
+      "baseType": "Volo.Abp.Application.Dtos.FullAuditedEntityDto<System.Int32>",
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
@@ -18676,11 +18691,23 @@
           "minimum": null,
           "maximum": null,
           "regex": null
+        },
+        {
+          "name": "Children",
+          "jsonName": null,
+          "type": "[YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto]",
+          "typeSimple": "[YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto]",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
         }
       ]
     },
-    "YamangTao.OrgUnits.OrgUnits.Dtos.OrgUnitDto": {
-      "baseType": "Volo.Abp.Application.Dtos.FullAuditedEntityDto<System.Int32>",
+    "YamangTao.OrgUnits.OrgUnits.Dtos.CreateUpdateOrgUnitDto": {
+      "baseType": null,
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,

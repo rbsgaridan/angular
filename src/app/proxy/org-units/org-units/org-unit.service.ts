@@ -35,6 +35,14 @@ export class OrgUnitService {
     { apiName: this.apiName });
   
 
+  getFullOrgTree = () =>
+    this.restService.request<any, OrgUnitDto>({
+      method: 'GET',
+      url: '/api/app/org-unit/full-org-tree',
+    },
+    { apiName: this.apiName });
+  
+
   getList = (input: OrgUnitGetListInput) =>
     this.restService.request<any, PagedResultDto<OrgUnitDto>>({
       method: 'GET',
